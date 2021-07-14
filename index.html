@@ -11,6 +11,7 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+    <script src="https://kit.fontawesome.com/9b18d77a2b.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
@@ -43,6 +44,7 @@
             <hr />
             <ul>
               <li>Wednesday</li>
+              <li>14th July</li>
               <li>08:00</li>
               <li>Updated now</li>
             </ul>
@@ -50,37 +52,36 @@
           </div>
           <div class="col-4">
             <div class="row">
-              <img src="img/sunny.png" alt="sunny" />
+              <img src="img/sunny.png" alt="sunny" id="image-center"/>
             </div>
-            <div class="center">
-            <div class="row">25 °C | °F</div>
-            </div>
+                <div class="row">
+            <div class="temperature">
+             <span class="centerTemperature"><strong>25</strong></span>
+             <span class="units">
+               <small>°C | <a href="#">°F</a></small>
+               </span>
+             </div>     
+             </div>  
           </div>
           <div class="col-4">
             <div class="right">
             <ul>
               <li>
-            <div class="tempMin">Min. 10°C | 50°F</div>
+              <div class="tempMin"><i class="fas fa-temperature-low"></i> Min. 10°C | 50°F</div>
             </li>
             <li>
-            <div class="tempMax">Max. 15°C | 59°C</div>
-            </li>
-            <hr />
-            <li>
-            <div class="humidity">Humidity: 78 %</div>
-            </li>
-            <li>
-            <div class="precipitation">Precipitation: 20mm</div>
-            </li>
-            <li>
-            <div class="wind">Wind: 0 km/h</div>
+            <div class="tempMax"><i class="fas fa-temperature-high"></i> Max. 15°C | 59°C</div>
             </li>
             <hr />
             <li>
-            <div class="sunrise">Sunrise: 5:03</div>
+            <div class="humidity"><i class="fas fa-tint"></i> Humidity: 78 %</div>
             </li>
             <li>
-            <div class="sunset">Sunset: 21:32</div>
+            <div class="precipitation"><i class="fas fa-cloud-showers-heavy"></i> Precipitation: 20mm</div>
+            </li>
+            <li>
+           
+            <div class="wind"><i class="fas fa-wind"></i> Wind: 0 km/h</div>
             </li>
             </ul>
             </div>
