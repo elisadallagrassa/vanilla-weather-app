@@ -13,6 +13,9 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="src/style.css" />   
 <title>Weather app</title>
@@ -22,16 +25,20 @@
       <div class="weatherApp">
         <h1>WeatherApp</h1>
         <form>
+          <div class="command">
           <input
             type="search"
-            value="Enter a city"
+            placeholder="Enter a city"
             autofocus="on"
             autocomplete="off"
+            id="form"
           />
-          <input type="submit" value="Search" />
+          <input type="submit" value="Search" id="search"/>
+          </div>
         </form>
         <div class="row">
           <div class="col-4">
+            <div class="left">
             <h2>Berlin</h2>
             <hr />
             <ul>
@@ -39,19 +46,22 @@
               <li>08:00</li>
               <li>Updated now</li>
             </ul>
+            </div>
           </div>
           <div class="col-4">
             <div class="row">
               <img src="img/sunny.png" alt="sunny" />
             </div>
+            <div class="center">
             <div class="row">25 °C | °F</div>
+            </div>
           </div>
           <div class="col-4">
+            <div class="right">
             <ul>
               <li>
             <div class="tempMin">Min. 10°C | 50°F</div>
             </li>
-            <hr />
             <li>
             <div class="tempMax">Max. 15°C | 59°C</div>
             </li>
@@ -73,6 +83,7 @@
             <div class="sunset">Sunset: 21:32</div>
             </li>
             </ul>
+            </div>
           </div>
         </div>
       </div>
