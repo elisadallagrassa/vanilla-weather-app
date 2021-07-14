@@ -4,19 +4,23 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="src/style.css" />
+
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
-    <title>Weather app</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/style.css" />   
+<title>Weather app</title>
   </head>
   <body>
     <div class="container">
       <div class="weatherApp">
-        <h1>Weather app</h1>
+        <h1>WeatherApp</h1>
         <form>
           <input
             type="search"
@@ -43,20 +47,37 @@
             <div class="row">25 °C | °F</div>
           </div>
           <div class="col-4">
+            <ul>
+              <li>
             <div class="tempMin">Min. 10°C | 50°F</div>
+            </li>
             <hr />
+            <li>
             <div class="tempMax">Max. 15°C | 59°C</div>
+            </li>
             <hr />
+            <li>
             <div class="humidity">Humidity: 78 %</div>
+            </li>
+            <li>
             <div class="precipitation">Precipitation: 20mm</div>
+            </li>
+            <li>
             <div class="wind">Wind: 0 km/h</div>
+            </li>
             <hr />
+            <li>
             <div class="sunrise">Sunrise: 5:03</div>
+            </li>
+            <li>
             <div class="sunset">Sunset: 21:32</div>
+            </li>
+            </ul>
           </div>
         </div>
       </div>
       <small>
+        <div class="footer">
         This project was coded by Elisa Dallagrassa
         <br />and is open-sourced on
         <a
@@ -67,6 +88,7 @@
         and hosted on
         <a href="#" target="_blank">Netlify</a>
       </small>
+      </div>
     </div>
     <script src="src/app.js"></script>
   </body>
