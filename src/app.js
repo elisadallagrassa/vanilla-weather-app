@@ -38,7 +38,7 @@ function displayTemperature(response) {
   let imageElement = document.querySelector("#image-center");
   imageElement.setAttribute(
     "src",
-    `http://api.openweathermap.org/data/2.5/weather?q=London`
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
 }
 
