@@ -35,6 +35,11 @@ function displayTemperature(response) {
   windElement.innerHTML = Math.round(response.data.wind.speed);
   let dateElement = document.querySelector("#date");
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  let imageElement = document.querySelector("#image-center");
+  imageElement.setAttribute(
+    "src",
+    `http://api.openweathermap.org/data/2.5/weather?q=London`
+  );
 }
 
 let apiKey = "51758ac4928a75db534673c6f5684b1c";
