@@ -21,22 +21,38 @@ function formatDate(timestamp) {
   return `${day}, ${hours}:${minutes}`;
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
+
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row row-cols-5">`;
-  let days = ["Wed", "Thu", "Fri", "Sat", "Sun"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="col">
-        <div class="forecast-date"><strong>${day}</strong></div>
-        <img src="http://openweathermap.org/img/wn/01d@2x.png" alt="sunny" width="70px">
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col">
+        <div class="forecast-date"><strong>${formatDay(
+          forecastDay.dt
+        )}</strong></div>
+        <img src="http://openweathermap.org/img/wn/${
+          forecastDay.weather[0].icon
+        }@2x.png" alt="sunny" width="70px">
         <div class="forecast-temperature">
-          <span class="forecast-temperature-max"><strong>24°</strong></span>
-          <span class="forecast-temperature-min">17°</span>
+          <span class="forecast-temperature-max"><strong>${Math.round(
+            forecastDay.temp.max
+          )}°</strong></span>
+          <span class="forecast-temperature-min">${Math.round(
+            forecastDay.temp.min
+          )}°</span>
         </div>
       </div>`;
+    }
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
@@ -94,20 +110,6 @@ function showWeather(response) {
     response.data.wind.speed
   );
 }
-
-function searchLocation(position) {
-  let apiKey = "51758ac4928a75db534673c6f5684b1c";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(showWeather);
-}
-
-function getCurrentLocation(event) {
-  event.preventDefault();
-  navigator.geolocation.getCurrentPosition(searchLocation);
-}
-
-let currentLocation = document.querySelector("#map-icon");
-currentLocation.addEventListener("click", getCurrentLocation);
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
